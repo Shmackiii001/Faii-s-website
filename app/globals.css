@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -23,4 +24,102 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Regular version */
+@font-face {
+  font-family: "mex";
+  src: url("/fonts/mexcellent/Mexcellent Rg.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3D version with different weight */
+@font-face {
+  font-family: "mex";
+  src: url("/fonts/mexcellent/Mexcellent 3d.otf") format("opentype");
+  font-weight: 700; /* or 900 for bold/3D effect */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "prts";
+  src: url("/fonts/porter_sans_block/porter-sans-inline-block-webfont.woff") format("woff");
+  font-weight: 700; /* or 900 for bold/3D effect */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "pstB";
+  src: url("/fonts/post-no-bills-jaffna-cufonfonts/PostNoBillsJaffna-Regular.ttf") format("truetype");
+  font-weight: 400; /* Regular weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "pstB";
+  src: url("/fonts/post-no-bills-jaffna-cufonfonts/PostNoBillsJaffna-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+.post {
+  font-family: "pstB";
+  font-weight: 400; /* Matches the Regular font */
+}
+
+.post-bold {
+  font-family: "pstB";
+  font-weight: 700; /* Matches the Bold font */
+}
+.prt{
+  font-family: "prts";
+  font-weight: 300;
+  
+}
+.fnt {
+  font-family: "mex", sans-serif;
+  font-weight: 400; /* uses Regular */
+}
+
+.fnt-bold {
+  font-family: "mex", sans-serif;
+  font-weight: 700; /* uses 3D version */
+}
+
+.gold-metallic {
+  background: linear-gradient(
+    135deg,
+    #d4af37 0%,
+    #f9e08b 20%,
+    #d4af37 40%,
+    #f9e08b 60%,
+    #d4af37 80%,
+    #aa7c11 100%
+  );
+}
+
+.gold-rich {
+  background: linear-gradient(
+    to right,
+    #8a6803 15%,
+    #ffcc00 35%,
+    #fff1a8 51%,
+    #ffcc00 66%,
+    #967206 88%
+  );
+}
+
+.princess {
+  font-family: "Princess Sofia", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.princess-thin {
+  font-family: "Princess Sofia", cursive;
+  font-weight: 200;
+  font-style: normal;
 }
