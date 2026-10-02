@@ -1,53 +1,20 @@
-import React from "react";
-import Glitch from "@/components/glitch"
-function header({ ...props }) {
-  return (
-    <div>
-      {props?.home ? (
-        <div className="h-[40vh] gold-rich w-full flex justify-center items-center">
-          <div className="bg-gray-300 h-[30vh] w-full relative">
-            <div className="flex flex-row">
-              <div 
-                className="relative flex-4 ml-4 sm:ml-4 sm:flex-4 md:flex-4 lg:flex-2"
-                style={{}}
-              >
-                <img
-                  src="/faii.png"
-                  alt="Faith's image"
-                  className="h-[350px] object-cover -translate-y-23 pointer-events-none"
-                
-                />
-                <div className="absolute -top-25"><Glitch/></div>
-              </div>
-              <div className="flex-8">
-                <div className=" flex justify-center items-center h-[30vh]">
-                  <div className="flex-col">
-                    <div>
-                      <h2
-                        className="fnt-bold text-4xl princess"
-                        style={{ }}
-                      >
-                        Faith Kepchemboi
-                      </h2>
-                    </div>
-                    <div>
-                      <h2 className="prt text-2xl sm:text-2xl md:text-4xl">Law Industry</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) :props.lifestyle? (
-         <div className="h-[40vh] bg-cyan-500 w-full flex justify-center items-center">
-         
-        </div>
-      ):( <div className="h-[40vh] bg-pink-700 w-full flex justify-center items-center">
-         
-        </div>)}
-    </div>
-  );
-}
+type HeaderProps = { home?: boolean; lifestyle?: boolean; blog?: boolean };
 
-export default header;
+const content = {
+  home: { label: "LAW · LIFE · THE SPACE BETWEEN", title: "Faith Kepchemboi", subtitle: "A life of purpose, curiosity & becoming.", monogram: "F" },
+  lifestyle: { label: "LIFE, IN LITTLE DETAILS", title: "Life lately", subtitle: "A living scrapbook of what makes a life feel full.", monogram: "L" },
+  blog: { label: "THOUGHTS, GATHERED", title: "The journal", subtitle: "Notes from the work, the learning, the living.", monogram: "J" },
+};
+
+export default function Header({ home, lifestyle }: HeaderProps) {
+  const page = home ? content.home : lifestyle ? content.lifestyle : content.blog;
+  return <header className={`hero ${home ? "hero-home" : lifestyle ? "hero-life" : "hero-journal"}`}>
+    <div className="hero-wrap">
+      <div className="hero-wordmark"><span className="wordmark-star">✳</span> FK<span className="wordmark-dot">.</span></div>
+      <div className="hero-text"><span className="hero-kicker">{page.label}</span><h1>{page.title}</h1><p>{page.subtitle}</p></div>
+      {home ? <div className="hero-portrait"><div className="portrait-image" role="img" aria-label="Portrait of Faith Kepchemboi" /><span className="portrait-label">LAW · LIFE · PERSPECTIVE <i>✳</i></span></div> : <div className="hero-letter" aria-hidden="true">{page.monogram}</div>}
+      <div className="hero-bottom-note"><span>PERSONAL PORTFOLIO</span><span>SCROLL TO EXPLORE ↓</span></div>
+      <span className="hero-star" aria-hidden="true">✳</span>
+    </div>
+  </header>;
+}
