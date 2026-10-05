@@ -5,10 +5,19 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "dbGen": "drizzle-kit generate",
+    "dbMig": "drizzle-kit migrate ",
+    "studio": "drizzle-kit studio",
+    "dbDevPush": "drizzle-kit push",
+    "dbProdPull": "drizzle-kit push --config=drizzle-prod.drizzle.config",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1146.0",
+    "@neondatabase/serverless": "^1.2.0",
+    "dotenv": "^18.0.5",
+    "drizzle-orm": "^1.0.0-rc.4",
     "next": "16.2.9",
     "next-auth": "^4.24.14",
     "react": "19.2.4",
@@ -19,9 +28,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "drizzle-kit": "^1.0.0-rc.4",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }
